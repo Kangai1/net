@@ -4,7 +4,7 @@
 #### 서버를 연결해 계산기 만들기
 
 ### 서버 프로그램 (Server.java)
-이 서버 프로그램은 포트 1234에서 클라이언트의 연결을 기다리고, 연결된 클라이언트의 요청을 처리합니다.
+이 서버 프로그램은 포트 1001에서 클라이언트의 연결을 기다리고, 연결된 클라이언트의 요청을 처리합니다.
 ```java
 import java.io.*;
 import java.net.*;
@@ -12,7 +12,7 @@ import java.util.concurrent.*;
 
 public class Server {
     public static void main(String[] args) {
-        int port = 1234;
+        int port = 1001;
         ExecutorService pool = Executors.newFixedThreadPool(10);
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
@@ -68,7 +68,7 @@ import java.net.*;
 public class Client {
     public static void main(String[] args) {
         String serverAddress = "localhost"; // 기본 서버 주소
-        int port = 1234; // 기본 포트 번호
+        int port = 1001; // 기본 포트 번호
 
         // server_info.dat 파일에서 서버 정보 읽기
         try (BufferedReader fileReader = new BufferedReader(new FileReader("server_info.dat"))) {
